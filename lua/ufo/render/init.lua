@@ -124,10 +124,12 @@ function M.captureVirtText(bufnr, text, lnum, syntax, namespaces)
         end)
     end
     local virtText = {}
-    local lastHlGroup = hlGroupSlots[1] or 'UfoFoldedFg'
+    -- local lastHlGroup = hlGroupSlots[1] or 'UfoFoldedFg'
+    local lastHlGroup = 'UfoFoldedFg'
     local lastIndex = 1
     for i = 2, len do
-        local hlGroup = hlGroupSlots[i] or 'UfoFoldedFg'
+        -- local hlGroup = hlGroupSlots[i] or 'UfoFoldedFg'
+        local hlGroup = 'UfoFoldedFg'
         if lastHlGroup ~= hlGroup then
             table.insert(virtText, {text:sub(lastIndex, i - 1), lastHlGroup})
             lastIndex = i

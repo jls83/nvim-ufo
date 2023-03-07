@@ -42,7 +42,8 @@ local function resetHighlightGroup()
     else
         cmd('hi default link UfoFoldedBg Visual')
     end
-    ok, hl = pcall(api.nvim_get_hl_by_name, 'Normal', termguicolors)
+    -- ok, hl = pcall(api.nvim_get_hl_by_name, 'Normal', termguicolors)
+    ok, hl = pcall(api.nvim_get_hl_by_name, 'Folded', termguicolors)
     if ok and hl.foreground then
         if termguicolors then
             cmd(('hi default UfoFoldedFg guifg=#%x'):format(hl.foreground))
